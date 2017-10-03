@@ -14,5 +14,25 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.head{
+  width: 100%;
+  background-color: black;
+  img{
+    height: 40px;
+    float: left;
+  }
+  .links {
+    li{
+      float: right;
+    }
+  }
+}
+
+.foot{
+  width: 100%;
+  background-color: black;
+  /* stuff will go here */
+}

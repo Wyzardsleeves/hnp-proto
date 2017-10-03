@@ -8,12 +8,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Home", home_index_path %></li>
-    <li><%= link_to "Forums", home_forum_path %></li>
-  </ul>
-  <%= yield %>
+  <div class="head">
+    <div class="container">
+      <!-- <%= image_tag "hnp-logo.jpg" , class:"hnp-logo" %> -->
+      <%= link_to image_tag("hnp-logo.jpg") %>
+      <ul class="nav nav-tabs links">
+        <li><%= link_to "Forums", home_forum_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="container">
+      
+    </div>
   </div>
 </body>
 </html>

@@ -23,10 +23,11 @@ heroku create             #heroku create app
 git push heroku master    #push app to heroku
 heroku apps:info          #heroku info
 
-#links in rails
+#tags in rails
+<%= image_tag "blocipedia.png" %> >#import an image
 <%= link_to "subjectHere", insert_here_path, class: "classname" %> >#class is optional
 <%= link_to "Forums", home_forum_path, class:"btn btn-success" %>  >
-<%= link_to "Delete", home_forum_path, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this entry?'} %>          >#this onw might be wrong
+<%= link_to "Delete", @controllerName, home_forum_path, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this entry?'} %>          >#this onw might be wrong
 
 
 #testing-----------------------------------------------------------------------------
