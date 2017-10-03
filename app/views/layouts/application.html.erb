@@ -3,29 +3,46 @@
 <head>
   <title>HnpProto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="head">
+  <section class="head">
     <div class="container">
-      <!-- <%= image_tag "hnp-logo.jpg" , class:"hnp-logo" %> -->
-      <%= link_to image_tag("hnp-logo.jpg") %>
+      <%= link_to image_tag("hnp-logo.jpg"), home_index_path %>
+      <!-- https://www.facebook.com/TheHNP/ -->
       <ul class="nav nav-tabs links">
+        <i class="ion-social-freebsd-devil"></i>
+        <li><%= link_to "FAQ", home_faq_path %></li>
         <li><%= link_to "Forums", home_forum_path %></li>
       </ul>
     </div>
-  </div>
-  <div class="main">
+  </section>
+  <section class="main">
     <div class="container">
       <%= yield %>
     </div>
-  </div>
-  <div class="foot">
+  </section>
+  <section class="foot">
     <div class="container">
-      
+      <div class="bot-sec-1">
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Help</li>
+          <li>Terms of Use</li>
+          <li>Advertise</li>
+        </ul>
+      </div>
+      <div class="bot-sec-2">
+
+      </div>
+      <div class="bot-sec-3">
+
+      </div>
+
     </div>
-  </div>
+  </section>
 </body>
 </html>

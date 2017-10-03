@@ -8,6 +8,7 @@ gem 'sqlite3'           #move to to :development in gemfile
 gem 'rails_12factor'    #for heroku I think?
 #redcarpet for markdown
 #paperclip for image
+#pry for irb substitute
 
 bundle install                          #installs gems
 bundle install --without production     #installs gems wihtout production
