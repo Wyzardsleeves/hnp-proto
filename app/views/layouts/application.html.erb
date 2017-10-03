@@ -13,7 +13,7 @@
     <div class="container">
       <%= link_to image_tag("hnp-logo.jpg"), home_index_path %>
       <!-- https://www.facebook.com/TheHNP/ -->
-      <a href="https://www.facebook.com/TheHNP/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.facebook.com/TheHNP/" target="_blank"><i class="fa fa-facebook"></i></a>
       <ul class="nav nav-tabs links">
         <li><%= link_to "FAQ", home_faq_path %></li>
         <li><%= link_to "Forums", home_forum_path %></li>
@@ -27,21 +27,34 @@
   </section>
   <section class="foot">
     <div class="container">
-      <div class="bot-sec-1">
-        <ul>
-          <li>Privacy Policy</li>
-          <li>Help</li>
-          <li>Terms of Use</li>
-          <li>Advertise</li>
-        </ul>
+      <div class="bot-elements">
+        <div class="bot-sec-1 col-md-4">
+          <h5>Reviews</h5>
+          <ul>
+            <li>PC</li>
+            <li>Xbox</li>
+            <li>Playstation</li>
+            <li>Switch</li>
+          </ul>
+        </div>
+        <div class="bot-sec-2 col-md-4">
+          <h5>About</h5>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Help</li>
+            <li>Terms of Use</li>
+            <li>Advertise</li>
+          </ul>
+        </div>
+        <div class="bot-sec-3 col-md-4">
+          <h5>Contact</h5>
+          <ul>
+            <li>thenhp@gmail.com</li>
+          </ul>
+        </div>
       </div>
-      <div class="bot-sec-2">
-
-      </div>
-      <div class="bot-sec-3">
-
-      </div>
-
+      <!-- attach link to this later -->
+      <%= image_tag "hnp-logo.jpg" %>
     </div>
   </section>
 </body>

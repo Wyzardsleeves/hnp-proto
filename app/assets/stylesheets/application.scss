@@ -60,17 +60,40 @@
   position: absolute;
   bottom: 0;
   /* stuff will go here */
-  .bot-sec-1{
-    ul{
-      list-style: none;
-      padding: 0
+  .bot-elements{
+    display: table;
+    width: 100%;
+    margin-bottom: 70px;
+    .bot-sec-1{
+      width: 32%;
+      display: table-cell;
+      ul{
+        list-style: none;
+        padding: 0
+      }
     }
-
+    .bot-sec-2{
+      width: 32%;
+      display: table-cell;
+      ul{
+        list-style: none;
+        padding: 0
+      }
+    }
+    .bot-sec-3{
+      width: 32%;
+      display: table-cell;
+      ul{
+        list-style: none;
+        padding: 0
+      }
+    }
   }
-  .bot-sec-2{
-
-  }
-  .bot-sec-3{
-
+  img{
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    bottom: 20px;
   }
 }
