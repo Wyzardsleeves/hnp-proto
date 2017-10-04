@@ -24,6 +24,7 @@
   width: 100%;
   background-color: black;
   color: #f0f0f0;
+  border: none;
   img{
     height: 40px;
     float: left;
@@ -33,7 +34,7 @@
     font-size: 25px;
     position: absolute;
     margin: 0 20px;
-    padding: 10px 0;
+    padding: 10px 0 5px 0;
   }
   i:hover{
     background-color: #f0f0f0;
@@ -43,11 +44,31 @@
     color: inherit;
   }
   .links {
+    border: none;
     li{
       float: right;
     }
     li:hover{
       color: black;
+    }
+  }
+}
+
+.sub-head{
+  width: 100%;
+  background-color: #686868;
+  color: #f0f0f0;
+  padding-top: 5px;
+  ul{
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    display: inline-block;
+    li{
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 2%;
+      display: inline;
     }
   }
 }
@@ -67,25 +88,50 @@
     .bot-sec-1{
       width: 32%;
       display: table-cell;
+      h5{
+        font-size: 16px;
+      }
       ul{
         list-style: none;
-        padding: 0
+        padding: 0;
+        li{
+          font-size: 14px;
+          a{
+            color: inherit;
+          }
+        }
       }
     }
     .bot-sec-2{
       width: 32%;
       display: table-cell;
+      h5{
+        font-size: 16px;
+      }
       ul{
         list-style: none;
-        padding: 0
+        padding: 0;
+        li{
+          font-size: 14px;
+          a{
+            color: inherit;
+          }
+        }
       }
     }
     .bot-sec-3{
       width: 32%;
       display: table-cell;
+      h5{
+        font-size: 16px;
+      }
       ul{
         list-style: none;
-        padding: 0
+        padding: 0;
+        li{
+          font-size: 14px;
+
+        }
       }
     }
   }
