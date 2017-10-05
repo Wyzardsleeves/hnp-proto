@@ -32,8 +32,7 @@
   i{
     float: left;
     font-size: 25px;
-    position: absolute;
-    margin: 0 20px;
+    margin: 0 0 0 20px;
     padding: 10px 0 5px 0;
   }
   i:hover{
@@ -90,6 +89,7 @@
       display: table-cell;
       h5{
         font-size: 16px;
+        font-weight: bold;
       }
       ul{
         list-style: none;
@@ -107,6 +107,7 @@
       display: table-cell;
       h5{
         font-size: 16px;
+        font-weight: bold;
       }
       ul{
         list-style: none;
@@ -124,13 +125,16 @@
       display: table-cell;
       h5{
         font-size: 16px;
+        font-weight: bold;
       }
       ul{
         list-style: none;
         padding: 0;
         li{
           font-size: 14px;
-
+          a{
+            color: inherit;
+          }
         }
       }
     }

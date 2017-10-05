@@ -36,13 +36,17 @@ gem 'rspec-rails', '~> 3.0'                   #add to :development, :test in gem
 rails generate rspec:install                  #generates respec for project
 expect(response).to render_template("optView1")  #expects a render of the template
 
-#example
+#example of page render
 describe "GET index" do
   it "renders the index template" do
     get :index
     expect(response).to render_template("index")
   end
 end
+
+#example of page
+
+
 #------------------------------------------------------------------------------------
 
 #controllers
