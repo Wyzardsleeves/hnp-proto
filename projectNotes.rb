@@ -50,10 +50,12 @@ end
 #------------------------------------------------------------------------------------
 
 #controllers
-rails generate controller controllerName optView1 optView2  #generates controller and views
+rails generate controller controllerName optView1 optView2  #must be pluaral
+rails generate controller Topics index new edit  #generates controller and views
 
 #models
-rails generate model modelName
+rails generate model modelName  #must be singluar
+rails generate model Topics
 
 #routes
 root 'controllerName#optView1'    #creates root ex) root 'home#index'
