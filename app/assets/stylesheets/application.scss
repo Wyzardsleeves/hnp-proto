@@ -20,133 +20,157 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.head{
+html{
+  display: table;
+  margin: 0;
   width: 100%;
-  background-color: black;
-  color: #f0f0f0;
-  border: none;
-  img{
-    height: 40px;
-    float: left;
-  }
-  i{
-    float: left;
-    font-size: 25px;
-    margin: 0 0 0 20px;
-    padding: 10px 0 5px 0;
-  }
-  i:hover{
-    background-color: #f0f0f0;
-    color: black;
-  }
-  a{
-    color: inherit;
-  }
-  .links {
-    border: none;
-    li{
-      float: right;
-    }
-    li:hover{
-      color: black;
-    }
-  }
-}
-
-.sub-head{
-  width: 100%;
-  background-color: #686868;
-  color: #f0f0f0;
-  padding-top: 5px;
-  ul{
-    text-align: center;
-    width: 100%;
-    padding: 0;
-    display: inline-block;
-    li{
-      font-size: 14px;
-      font-weight: bold;
-      margin: 0 2%;
-      display: inline;
-      a{
-        color: inherit;;
-      }
-    }
-  }
-}
-
-.foot{
-  padding: 20px 0;
-  color: #f0f0f0;
-  width: 100%;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  /* stuff will go here */
-  .bot-elements{
+  height: 100%;
+  body{
     display: table;
+    margin: 0;
     width: 100%;
-    margin-bottom: 70px;
-    .bot-sec-1{
-      width: 32%;
-      display: table-cell;
-      h5{
-        font-size: 16px;
-        font-weight: bold;
+    height: 100%;
+    .head{
+      width: 100%;
+      background-color: black;
+      color: #f0f0f0;
+      border: none;
+      display: table;
+      img{
+        height: 40px;
+        float: left;
       }
+      i{
+        float: left;
+        font-size: 25px;
+        margin: 0 0 0 20px;
+        padding: 10px 0 5px 0;
+      }
+      i:hover{
+        background-color: #f0f0f0;
+        color: black;
+      }
+      a{
+        color: inherit;
+      }
+      .links {
+        border: none;
+        li{
+          float: right;
+        }
+        li:hover{
+          color: black;
+        }
+      }
+    }
+    .sub-head{
+      width: 100%;
+      background-color: #686868;
+      color: #f0f0f0;
+      padding-top: 5px;
       ul{
-        list-style: none;
+        text-align: center;
+        width: 100%;
         padding: 0;
+        display: inline-block;
         li{
           font-size: 14px;
+          font-weight: bold;
+          margin: 0 2%;
+          display: inline;
           a{
             color: inherit;
           }
         }
       }
     }
-    .bot-sec-2{
-      width: 32%;
-      display: table-cell;
-      h5{
-        font-size: 16px;
-        font-weight: bold;
-      }
-      ul{
-        list-style: none;
-        padding: 0;
-        li{
-          font-size: 14px;
-          a{
-            color: inherit;
+    .main{
+      margin-bottom: 20px;
+    }
+    .foot{
+      color: #f0f0f0;
+      width: 100%;
+      background-color: black;
+      display: table-row;
+      height: 1px;
+      .bot-elements{
+        padding: 30px 0;
+        display: table;
+        width: 100%;
+        .bot-sec-1{
+          padding: 0 0 0 40px;
+          width: 33%;
+          display: table-cell;
+          h5{
+            font-size: 16px;
+            font-weight: bold;
+          }
+          ul{
+            list-style: none;
+            padding: 0;
+            li{
+              font-size: 14px;
+              a{
+                color: inherit;
+              }
+            }
           }
         }
-      }
-    }
-    .bot-sec-3{
-      width: 32%;
-      display: table-cell;
-      h5{
-        font-size: 16px;
-        font-weight: bold;
-      }
-      ul{
-        list-style: none;
-        padding: 0;
-        li{
-          font-size: 14px;
-          a{
-            color: inherit;
+        .bot-sec-2{
+          padding: 0 0 0 40px;
+          width: 33%;
+          display: table-cell;
+          h5{
+            font-size: 16px;
+            font-weight: bold;
+          }
+          ul{
+            list-style: none;
+            padding: 0;
+            li{
+              font-size: 14px;
+              a{
+                color: inherit;
+              }
+            }
+          }
+        }
+        .bot-sec-3{
+          padding: 0 0 0 40px;
+          width: 33%;
+          display: table-cell;
+          h5{
+            font-size: 16px;
+            font-weight: bold;
+          }
+          ul{
+            list-style: none;
+            padding: 0;
+            li{
+              font-size: 14px;
+              a{
+                color: inherit;
+              }
+            }
+          }
+        }
+        .bot-img{
+          padding: 20px;
+          text-align: center;
+          clear: both;
+          img{
+            height: 50px;
           }
         }
       }
     }
   }
-  img{
-    height: 50px;
-    margin: 0 auto;
-    position: absolute;
-    right: 50%;
-    bottom: 20px;
-  }
+}
+
+.expand{
+  width: 100%;
+}
+
+.wrap{
+  height: auto;
 }

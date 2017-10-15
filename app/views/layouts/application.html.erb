@@ -9,67 +9,76 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section class="head">
-    <div class="container">
-      <%= link_to image_tag("hnp-logo.jpg"), home_index_path %>
-      <!-- https://www.facebook.com/TheHNP/ -->
-      <a href="https://www.facebook.com/TheHNP/" target="_blank"><i class="fa fa-facebook"></i></a>
-      <!-- fa-youtube-play -->
-      <a href="https://www.facebook.com/TheHNP/" target="_blank"><i class="fa fa-youtube-play"></i></a>
-      <ul class="nav nav-tabs links">
-        <li><%= link_to "Contact Us", home_contact_path %></li>
-        <li><%= link_to "FAQ", home_faq_path %></li>
-        <li><%= link_to "Forums", home_forum_path %></li>
-      </ul>
-    </div>
-  </section>
-  <section class="sub-head">
-    <div class="container">
-      <ul class="category-list">
-        <li><a href="#">All</a></li>
-        <li><a href="#">PC</a></li>
-        <li><a href="#">Xbox</a></li>
-        <li><a href="#">Playstation</a></li>
-        <li><a href="#">Switch</a></li>
+  <div class="wrap">
+    <section class="head">
+      <div class="container">
+        <%= link_to image_tag("hnp-logo.jpg"), home_index_path %>
+        <!-- https://www.facebook.com/TheHNP/ -->
+        <a href="https://www.facebook.com/TheHNP/" target="_blank"><i class="fa fa-facebook"></i></a>
+        <!-- fa-youtube-play -->
+        <a href="https://www.facebook.com/TheHNP/" target="_blank"><i class="fa fa-youtube-play"></i></a>
+        <ul class="nav nav-tabs links">
+          <li><%= link_to "Contact Us", home_contact_path %></li>
+          <li><%= link_to "FAQ", home_faq_path %></li>
+          <li><%= link_to "Forums", root_path %></li>
+        </ul>
       </div>
-    </div>
-  </section>
-  <section class="main">
-    <div class="container">
-      <%= yield %>
-    </div>
-  </section>
+    </section>
+    <section class="sub-head">
+      <div class="container">
+        <ul class="category-list">
+          <li><a href="#">All</a></li>
+          <li><a href="#">PC</a></li>
+          <li><a href="#">Xbox</a></li>
+          <li><a href="#">Playstation</a></li>
+          <li><a href="#">Switch</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="main">
+      <!-- for devise -->
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <!---------------->
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+  </div>
   <section class="foot">
-    <div class="container">
-      <div class="bot-elements">
-        <div class="bot-sec-1 col-md-4">
-          <h5>Reviews</h5>
-          <ul>
-            <li><a href="#">PC</a></li>
-            <li><a href="#">Xbox</a></li>
-            <li><a href="#">Playstation</a></li>
-            <li><a href="#">Switch</a></li>
-          </ul>
+    <div class="wrap">
+      <div class="container">
+        <footer class="bot-elements">
+            <div class="bot-sec-1 col-md-4">
+              <h5>Reviews</h5>
+              <ul>
+                <li><a href="#">PC</a></li>
+                <li><a href="#">Xbox</a></li>
+                <li><a href="#">Playstation</a></li>
+                <li><a href="#">Switch</a></li>
+              </ul>
+            </div>
+            <div class="bot-sec-2 col-md-4">
+              <h5>About</h5>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Advertise</a></li>
+              </ul>
+            </div>
+            <div class="bot-sec-3 col-md-4">
+              <h5>Social</h5>
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Youtube</a></li>
+              </ul>
+            </div>
+            <div class="bot-img">
+              <%= link_to image_tag("hnp-logo.jpg"), home_index_path %>
+            </div>
+          </footer>
         </div>
-        <div class="bot-sec-2 col-md-4">
-          <h5>About</h5>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Advertise</a></li>
-          </ul>
-        </div>
-        <div class="bot-sec-3 col-md-4">
-          <h5>Social</h5>
-          <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Youtube</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- attach link to this later -->
-      <%= image_tag "hnp-logo.jpg" %>
     </div>
   </section>
 </body>

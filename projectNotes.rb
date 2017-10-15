@@ -57,8 +57,233 @@ rails generate controller Topics index new edit  #generates controller and views
 rails generate model modelName  #must be singluar
 rails generate model Topics
 
+#
+rails g migration add_newParam_name_to_modelName newParam_name:type
+rails g migration add_user_id_to_posts user_id:integer  #example
+
+
 #routes
 root 'controllerName#optView1'    #creates root ex) root 'home#index'
+
+
+#Forum notes
+Users has_many :posts
+Users has_many :comments
+
+Posts belongs_to :user
+Posts has_many :comments
+
+Comments belongs_to :user
+Comments belongs_to :post
+
+rails g model post title:string content:text
+rake db:migrate
+rails g controller posts
+add def index end to posts_controller
+touch app/views/posts/index.html.erb
+
+#gems to add
+gem 'haml', '~>4.0.5'
+gem 'simple_form', '~> 3.0.2'
+gem 'devise', '~> 3.4.1'
+
+#add more features to the post controller
+def index
+  @posts = Post.all.order("created_at DESC")
+end
+def new
+  @posts = Post.new
+end
+def create
+  @post = Post.new(post_params)
+
+  if @post.save
+    redirect_to @post
+  else
+    render 'new'
+  end
+end
+
+private
+
+def find_post
+  @post = Post.find(params[:id])
+end
+
+def post_params
+  params.require(:post).permit(:title, :content)
+end
+
+#add to top of controller for DRY
+before_action :find_post, only: [:show, :edit, :update, :destory]
+
+#create form that will be reused
+touch app/views/posts/_form.html.erb
+
+#add to form
+= simple_form_for @post do |f|
+  = f.input :title
+  = f.input :content
+  = f.submit
+
+#add a show controller for the template
+def show
+  @post = Post.find(params[:id])
+end
+
+#add for update controller for edit page
+def update
+  if @post.update(post_params)
+    redirect_to @post
+  else
+    render 'edit'
+  end
+end
+
+#add destroy controller for destroy function
+def destroy
+  @post.destroy
+  redirect_to root_path
+end
+
+#add functionality to post show view
+= link_to "Home", root_path
+= link_to "Return to Posts", post_path
+= link_to "Edit", edit_post_path(@post)
+= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}
+
+#add to
+
+#populate index.html.erb
+- @posts.each do |post|
+  %h2= post.title
+  %p
+    Published at
+    = time_ago_in_words(post.created_at)
+
+#create a user_id after devise install
+rails g migration add_user_id_to_posts user_id:integer
+
+#add to index HTML to track user_id
+= post.user_id.email
+
+#after adding devise gem
+@post = current_user.posts.build              #add this to new controller in posts
+@post = current_user.posts.build(post_params) #add this to create controller in posts
+
+#wrap posts.index in a post div with classname of posts and add date and title class to others
+#posts
+  - @posts.each do |post|
+    %h3.title= link_to post.title, post
+    %p.date
+      Published at
+      = time_ago_in_words(post.created_at)
+      by
+      = post.user.email
+
+#add post class to show.html
+#post
+  %h1= @post.title
+  %p= @post.content
+
+  = link_to "Posts", root_path
+  = link_to "Edit", edit_post_path(@post)
+  = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}
+
+#add to keep out unsigned in people
+-if user_signed_in?
+  = link_to "New Post", new_post_path, class: "btn btn-success"
+
+#add to posts controller
+before_action :authenticate_user!, only: [:index, :show]  #prevents url'ing to new post
+
+#generate comments
+rails g model Comment content:text post:references user:references  #creates a content model and mokes comments belong to a post and user
+has_many :comments  #add to post model
+has_many :comments  #add to user model
+
+#add to routes for routing comments in a nest
+resources :posts do
+  resources :comments
+end
+
+#generate controller for comments
+rails g controller Comments
+
+#add to controller
+def create
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.create(params[:comment].permit(:comment))
+  @comment.user_id = current_user.id
+
+  if @comment.save
+    redirect_to post_path(@post)
+  else
+    render 'new'
+  end
+end
+
+#add some views to comments views
+touch app/comments/_form.html.erb
+touch app/comments/_comment.html.erb
+
+.comment
+  %p= comment.comment #add to _comment.html
+
+= simple_form_for([@post, @post.comments.build]) do |f| #add to _form.html
+  = f.input :comment
+  = f.submit
+
+#add to show.html in post views
+#comments
+  %h2= @post.comments.count
+  = render @post.comments
+
+  %h3 Reply to thread
+  = render "comments/form"
+
+#add comments user
+%p= comment.user.email #in _comment.html
+
+#add a destroy function for the comment in comments conroller
+def destroy
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.find(params[:id])
+
+  @comment.destroy
+  redirect_to post_path(@post)
+end
+
+#add to _comment.html
+= link_to "Delete", [comment.post, comment], method: :delete, class:"btn btn-danger", data: {confirm: "Are you sure?"}
+
+#add to comment controller
+def edit
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.find(param[:id])
+end
+
+def update
+  @post = Post.find(params[:post_id])
+  @comment = @post.comments.find(param[:id])
+
+  if @comment.update(params[:comment].permit(:comment))
+    redirect_to post_path(@post)
+  else
+    render 'edit'
+  end
+end
+
+#add to _comment.html
+= link_to "Edit", edit_post_comment_path(comment.post, comment), class:"btn btn-primary"
+
+#create an edit.html
+%h1 Edit Reply
+
+= simple_form_for([@post, @comment]) do |f|
+  = f.input :comment
+  = f.submit
+
 
 #-------------------------------------------------------------------------------------
 

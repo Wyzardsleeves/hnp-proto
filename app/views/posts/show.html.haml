@@ -1,0 +1,18 @@
+-if user_signed_in?
+  = link_to "<< Posts", root_path, class: "btn btn-primary"
+  = link_to "Edit", edit_post_path(@post), class: "btn btn-primary"
+  = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+-else
+  = link_to "Sign Up", new_user_registration_path, class: "btn btn-success"
+  = link_to "Sign In", new_user_session_path, class: "btn btn-primary"
+
+#post
+  %h1= @post.title
+  %p= @post.content
+
+  #comments
+    %h2= @post.comments.count
+    = render @post.comments
+
+    %h3 Reply to thread
+    = render "comments/form"
