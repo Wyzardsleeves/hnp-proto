@@ -1,4 +1,4 @@
-= simple_form_for @post do |f|
-  = f.input :title
-  = f.input :content
-  = f.submit
+= simple_form_for @post, role: "form", class: "form-group" do |f|
+    = f.input :title, class: "form-control"
+    = f.input :content, class: "form-control"
+    = f.submit class: "btn btn-primary"
