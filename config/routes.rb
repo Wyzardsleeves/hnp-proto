@@ -10,7 +10,15 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  
+
+=begin of theoretical solution for adding a "topicss" branch
+  resources :topics do
+    resources :posts do
+      resources :comments
+    end
+  end
+=end
+
   root 'posts#index'
 
 end

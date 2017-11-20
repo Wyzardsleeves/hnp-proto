@@ -3,3 +3,4 @@
 = simple_form_for([@post, @comment]) do |f|
   = f.input :comment
   = f.submit class:"btn btn-primary"
+  = link_to "Cancel", root_path, class: "btn btn-danger"

@@ -1,4 +1,5 @@
-= simple_form_for @post, role: "form", class: "form-group" do |f|
-    = f.input :title, class: "form-control"
-    = f.input :content, class: "form-control"
-    = f.submit class: "btn btn-primary"
+= simple_form_for @post, role: "form" do |f|
+  = f.input :title, class:"title-opt"
+  = f.input :content, class:"content-opt"
+  = f.submit class: "btn btn-primary"
+  = link_to "Cancel", root_path, class: "btn btn-danger"
