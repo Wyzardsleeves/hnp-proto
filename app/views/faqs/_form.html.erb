@@ -1,0 +1,11 @@
+<%= form_for @faq do |f| %>
+  <div class="form-group">
+    <%= f.label :question %>
+    <%= f.text_field :question, class: 'form-control', placeholder: "Enter FAQ question" %>
+
+    <%= f.label :answer %>
+    <%= f.text_area :answer, class: 'form-control', placeholder: "Enter FAQ answer" %>
+
+    <%=  f.submit "Save", class:"btn btn-primary" %>
+  </div>
+<% end %>

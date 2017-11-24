@@ -1,0 +1,10 @@
+<h1>Frequently Asked questions</h1>
+
+<% @faqs.each do |faq| %>
+  <div>
+    <h4><%= faq.question %></h4>
+    <h5><%= faq.answer %></h5>
+  <div>
+<% end %>
+
+<%= link_to "New", new_faq_path, class:"btn btn-success" %>

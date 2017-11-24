@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+=begin
+  get 'faqs/index'
+  get 'faqs/show'
+  get 'faqs/new'
+  get 'faqs/edit'
+=end
+  resources :faqs
+
   devise_for :users
   get 'home/contact'
   get 'home/faq'
@@ -11,13 +19,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-=begin of theoretical solution for adding a "topicss" branch
-  resources :topics do
-    resources :posts do
-      resources :comments
-    end
-  end
-=end
+
 
   root 'posts#index'
 
