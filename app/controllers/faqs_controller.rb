@@ -43,6 +43,12 @@ class FaqsController < ApplicationController
     end
   end
 
+  def destroy
+    @faq = Faq.find(params[:id])
+    @faq.destroy
+    redirect_to faqs_path
+  end
+
   private
   def adminOrNaw?
 
