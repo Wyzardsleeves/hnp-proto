@@ -34,7 +34,7 @@ class FaqsController < ApplicationController
     @faq.answer = params[:faq][:answer]
     @faq.question = params[:faq][:question]
 
-    if @faq.update(@faq_params)
+    if @faq.save
       flash[:notice] = "FAQ was updated."
       redirect_to faqs_path
     else
