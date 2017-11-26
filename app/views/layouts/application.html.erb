@@ -4,6 +4,7 @@
   <title>The HNP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -36,9 +37,13 @@
           </ul>
         </div>
         <div class="user-logging">
-          <%= link_to (fa_icon "user-plus"), new_user_registration_path, title:"Sign Up" %>
-          <%= link_to (fa_icon "sign-in"), new_user_session_path, title:"Log In" %>
-          <%= link_to (fa_icon "sign-out"), destroy_user_session_path, title:"Log Out" %>
+          <% unless current_user %>
+            <%= link_to (fa_icon "sign-in"), new_user_session_path, title:"Log In" %>
+            <%= link_to (fa_icon "user-plus"), new_user_registration_path, title:"Sign Up" %>
+          <% else %>
+            <h5>Logged in as <strong><%= current_user.email %></strong></h5>
+            <%= link_to (fa_icon "sign-out"), destroy_user_session_path, method: :delete, title:"Log Out" %>
+          <% end %>
         </div>
       </div>
     </section>

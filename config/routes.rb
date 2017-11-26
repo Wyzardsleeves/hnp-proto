@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-=begin
-  get 'faqs/index'
-  get 'faqs/show'
-  get 'faqs/new'
-  get 'faqs/edit'
-=end
   resources :faqs
 
   devise_for :users
@@ -13,13 +7,10 @@ Rails.application.routes.draw do
   get 'home/faq'
   get 'home/index'
   get 'home/forum'
-  #root 'home#index'
 
   resources :posts do
     resources :comments
   end
-
-
 
   root 'posts#index'
 

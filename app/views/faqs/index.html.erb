@@ -1,16 +1,14 @@
 <h1>Frequently Asked Questions</h1>
 
-<div class="row">
-  <div class="col-md-8">
-    <% @faqs.each do |faq| %>
-      <div>
-        <%= link_to "Edit", edit_faq_path(faq), class:"btn btn-primary" %>
-        <%= link_to "Delete", faq, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
-        <h3>Q: <%= faq.question %></h3>
-        <h4>A: <%= faq.answer %></h4>
-      <div>
-    <% end %>
-  </div>
-</div>
+
+<% @faqs.each do |faq| %>
+  <div>
+    <%= link_to "Edit", edit_faq_path(faq), class:"btn btn-primary" %>
+    <%= link_to "Delete", faq, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    <h3>Q: <%= faq.question %></h3>
+    <h4>A: <%= faq.answer %></h4>
+  <div>
+<% end %>
+
 
 <%= link_to "New", new_faq_path, class:"btn btn-success" %>
