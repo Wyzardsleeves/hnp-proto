@@ -64,23 +64,48 @@ html{
       }
     }
     .sub-head{
-      width: 100%;
+      /*width: 100%;*/
       background-color: #686868;
       color: #f0f0f0;
-      padding-top: 5px;
-      ul{
-        text-align: center;
-        width: 100%;
-        padding: 0;
-        display: inline-block;
-        li{
-          font-size: 14px;
-          font-weight: bold;
-          margin: 0 2%;
-          display: inline;
-          a{
-            color: inherit;
+      /* padding-top: 5px; */
+      .category-list{
+        width: 50%;
+        display: inline;
+        float: left;
+        .list{
+          width: 100%;
+          padding: 0;
+          margin: 3px 0 0 0;
+          display: inline-block;
+          li{
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 4% 0 0;
+            padding: 5px 0;
+            display: inline;
+            a{
+              color: inherit;
+            }
           }
+        }
+      }
+      .user-logging{
+        width: 50%;
+        padding: 0 15px 0 0;
+        float: right;
+        text-align: right;
+        i{
+          color: #f0f0f0;
+          font-size: 20px;
+          margin: 0 0 0 4%;
+          padding: 5px 0;
+          /*position: relative;
+          top: -5px; */
+
+        }
+        i:hover{
+          background-color: #f0f0f0;
+          color: #686868;
         }
       }
     }

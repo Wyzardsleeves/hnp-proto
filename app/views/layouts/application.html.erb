@@ -26,13 +26,20 @@
     </section>
     <section class="sub-head">
       <div class="container">
-        <ul class="category-list">
-          <li><a href="#">All</a></li>
-          <li><a href="#">PC</a></li>
-          <li><a href="#">Xbox</a></li>
-          <li><a href="#">Playstation</a></li>
-          <li><a href="#">Switch</a></li>
-        </ul>
+        <div class="category-list">
+          <ul class="list">
+            <li><a href="#">All</a></li>
+            <li><a href="#">PC</a></li>
+            <li><a href="#">Xbox</a></li>
+            <li><a href="#">Playstation</a></li>
+            <li><a href="#">Switch</a></li>
+          </ul>
+        </div>
+        <div class="user-logging">
+          <%= link_to (fa_icon "user-plus"), new_user_registration_path, title:"Sign Up" %>
+          <%= link_to (fa_icon "sign-in"), new_user_session_path, title:"Log In" %>
+          <%= link_to (fa_icon "sign-out"), destroy_user_session_path, title:"Log Out" %>
+        </div>
       </div>
     </section>
     <section class="main">
