@@ -41,7 +41,7 @@
             <%= link_to (fa_icon "sign-in"), new_user_session_path, title:"Log In" %>
             <%= link_to (fa_icon "user-plus"), new_user_registration_path, title:"Sign Up" %>
           <% else %>
-            <h5>Logged in as <strong><%= current_user.email %></strong></h5>
+            <h5>Logged in as <strong><%= current_user.name %></strong></h5>
             <%= link_to (fa_icon "sign-out"), destroy_user_session_path, method: :delete, title:"Log Out" %>
           <% end %>
         </div>
