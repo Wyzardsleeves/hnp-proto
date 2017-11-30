@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_sign_in, except: [:show, :index]
+  #before_action :require_sign_in, except: [:show, :index]
   before_action :authorize_user, except: [:show, :index]
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   #before_action :authenticate_user!, only: [:index, :show]
