@@ -8,7 +8,7 @@
 
 #post
   %h1= @post.title
-  %p= raw Markdown.new(@post.content).to_html
+  %h3= raw Markdown.new(@post.content).to_html
   -# %p= @post.content
 
   #comments
