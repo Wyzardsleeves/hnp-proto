@@ -4,7 +4,7 @@
 
 #Videogame media site
 
-Site: https://infinite-hollows-77627.herokuapp.com/home/
+Site: https://thehnp.herokuapp.com/
 
 Prototype to shut Calvin up because he's been bothering me for a gaming news site for a while now. Great exercise.
 
