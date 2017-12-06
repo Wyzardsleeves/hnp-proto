@@ -3,15 +3,15 @@
 
 <% @faqs.each do |faq| %>
   <div>
-    <% unless current_user.member? %>
-    <%= link_to "Edit", edit_faq_path(faq), class:"btn btn-primary" %>
-    <%= link_to "Delete", faq, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    <% if user_signed_in? && !current_user.member? %>
+      <%= link_to "Edit", edit_faq_path(faq), class:"btn btn-primary" %>
+      <%= link_to "Delete", faq, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
     <% end %>
     <h3>Q: <%= faq.question %></h3>
     <h4>A: <%= faq.answer %></h4>
   <div>
 <% end %>
 
-<% unless current_user.member? %>
+<% if user_signed_in? && !current_user.member? %>
   <%= link_to "New", new_faq_path, class:"btn btn-success" %>
 <% end %>

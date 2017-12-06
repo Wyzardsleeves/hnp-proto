@@ -296,3 +296,8 @@ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scs
 
 //= require bootstrap #add to application.js
 <meta name="viewport" content="width=device-width, initial-scale=1">  #add to application.html.erb
+
+
+
+
+#fix the logout for FAQ
