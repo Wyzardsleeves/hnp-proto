@@ -17,3 +17,17 @@ Gems Used:
 - Redcarpet
 - Paperclip
 - Pry
+
+
+Site
+- Home
+  - Post
+    - Comments
+- FAQ
+  - Questions
+  - Answers
+- Forums
+  - Boards
+    - Topics
+      - tposts
+        - tComments
